@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "nette/application",
-            "version": "v3.2.3",
+            "version": "v3.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/application.git",
-                "reference": "0af99e2fe9fcab0ed598da9f03992b936375d071"
+                "reference": "1e868966c3de55a087e5ec938189ec34a1648b04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/application/zipball/0af99e2fe9fcab0ed598da9f03992b936375d071",
-                "reference": "0af99e2fe9fcab0ed598da9f03992b936375d071",
+                "url": "https://api.github.com/repos/nette/application/zipball/1e868966c3de55a087e5ec938189ec34a1648b04",
+                "reference": "1e868966c3de55a087e5ec938189ec34a1648b04",
                 "shasum": ""
             },
             "require": {
@@ -38,7 +38,7 @@
             "require-dev": {
                 "jetbrains/phpstorm-attributes": "dev-master",
                 "latte/latte": "^2.10.2 || ^3.0.12",
-                "mockery/mockery": "^1.6",
+                "mockery/mockery": "^2.0",
                 "nette/di": "^3.2",
                 "nette/forms": "^3.2",
                 "nette/robot-loader": "^4.0",
@@ -94,9 +94,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/application/issues",
-                "source": "https://github.com/nette/application/tree/v3.2.3"
+                "source": "https://github.com/nette/application/tree/v3.2.5"
             },
-            "time": "2024-04-20T00:45:39+00:00"
+            "time": "2024-05-13T09:10:31+00:00"
         },
         {
             "name": "nette/component-model",
@@ -503,16 +503,16 @@
         },
         {
             "name": "vitek-dev/exceptions",
-            "version": "1.0.1",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vitek-dev/lib-exceptions.git",
-                "reference": "9fe6fb2820c8b28f8329effe51a3de42091ccc7e"
+                "reference": "8ce694c6231c88fe7f16b081a04097b9d76c3ba0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vitek-dev/lib-exceptions/zipball/9fe6fb2820c8b28f8329effe51a3de42091ccc7e",
-                "reference": "9fe6fb2820c8b28f8329effe51a3de42091ccc7e",
+                "url": "https://api.github.com/repos/vitek-dev/lib-exceptions/zipball/8ce694c6231c88fe7f16b081a04097b9d76c3ba0",
+                "reference": "8ce694c6231c88fe7f16b081a04097b9d76c3ba0",
                 "shasum": ""
             },
             "require": {
@@ -537,9 +537,9 @@
             "description": "Shared domain exceptions",
             "support": {
                 "issues": "https://github.com/vitek-dev/lib-exceptions/issues",
-                "source": "https://github.com/vitek-dev/lib-exceptions/tree/v1.0.1"
+                "source": "https://github.com/vitek-dev/lib-exceptions/tree/v1.0.4"
             },
-            "time": "2024-04-30T14:31:22+00:00"
+            "time": "2024-05-10T11:26:35+00:00"
         }
     ],
     "packages-dev": [

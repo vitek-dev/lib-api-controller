@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace VitekDev\Tests\Nette\Application;
 
 use PHPUnit\Framework\TestCase;

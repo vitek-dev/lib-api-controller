@@ -1,7 +1,8 @@
 <?php
 
-namespace VitekDev\Nette\Application;
+declare(strict_types=1);
 
+namespace VitekDev\Nette\Application;
 
 use ArgumentCountError;
 use DomainException;
@@ -17,15 +18,14 @@ use Nette\Http\IResponse;
 use Psr\Log\LoggerInterface;
 use ReflectionClass;
 use ReflectionNamedType;
-use ReflectionParameter;
 use RuntimeException;
 use Throwable;
 use VitekDev\Nette\Application\Request\RequestBody;
 use VitekDev\Nette\Application\Response\StatusResponse;
-use VitekDev\Shared\Exceptions\AuthenticationRequired;
-use VitekDev\Shared\Exceptions\AuthorizationInsufficient;
-use VitekDev\Shared\Exceptions\ResourceNotFound;
-use VitekDev\Shared\Exceptions\ValidationFailed;
+use VitekDev\Shared\Exceptions\Resources\ResourceNotFound;
+use VitekDev\Shared\Exceptions\Security\AuthenticationRequired;
+use VitekDev\Shared\Exceptions\Security\AuthorizationInsufficient;
+use VitekDev\Shared\Exceptions\Validation\ValidationFailed;
 
 abstract readonly class ApiController implements IPresenter
 {

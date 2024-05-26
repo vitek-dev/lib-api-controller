@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace VitekDev\Tests\Nette\Application\Request;
 
 use PHPUnit\Framework\TestCase;
-use VitekDev\Shared\Exceptions\ValidationFailed;
+use VitekDev\Shared\Exceptions\Validation\ValidationFailed;
 use VitekDev\Tests\Nette\Application\Request\Test\HasRulesAutoMappingDto;
 use VitekDev\Tests\Nette\Application\Request\Test\NoRulesAutoMappingDto;
 

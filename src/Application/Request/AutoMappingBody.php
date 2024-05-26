@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace VitekDev\Nette\Application\Request;
 
 use Nette\Schema\Expect;
 use Nette\Schema\Processor;
 use Nette\Schema\ValidationException;
-use VitekDev\Shared\Exceptions\ValidationFailed;
+use VitekDev\Shared\Exceptions\Validation\ValidationFailed;
 
 abstract class AutoMappingBody implements RequestBody
 {

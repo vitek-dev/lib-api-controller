@@ -6,6 +6,7 @@ namespace VitekDev\Nette\Application\Response;
 
 use Nette;
 use Nette\Application\Response;
+use Override;
 
 final readonly class StatusResponse implements Response
 {
@@ -63,7 +64,7 @@ final readonly class StatusResponse implements Response
         return new self(null, Nette\Http\IResponse::S204_NoContent);
     }
 
-    #[\Override] public function send(Nette\Http\IRequest $httpRequest, Nette\Http\IResponse $httpResponse): void
+    #[Override] public function send(Nette\Http\IRequest $httpRequest, Nette\Http\IResponse $httpResponse): void
     {
         $httpResponse->setCode($this->code);
         $httpResponse->setContentType('application/json', 'utf-8');

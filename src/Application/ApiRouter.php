@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace VitekDev\Nette\Application;
 
 use Nette\Application\Routers\RouteList;

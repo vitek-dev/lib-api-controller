@@ -14,9 +14,9 @@ use Nette\Http\IResponse;
 use PHPUnit\Framework\MockObject\MockObject;
 use Psr\Log\LoggerInterface;
 use VitekDev\Nette\Application\ApiController;
-use VitekDev\Shared\Exceptions\AuthenticationRequired;
-use VitekDev\Shared\Exceptions\AuthorizationInsufficient;
-use VitekDev\Shared\Exceptions\ResourceNotFound;
+use VitekDev\Shared\Exceptions\Resources\ResourceNotFound;
+use VitekDev\Shared\Exceptions\Security\AuthenticationRequired;
+use VitekDev\Shared\Exceptions\Security\AuthorizationInsufficient;
 use VitekDev\Tests\Nette\Application\ApiControllerTest;
 
 trait ApiTestControllers
