@@ -133,14 +133,20 @@ trait ApiTestControllers
         };
     }
 
-    protected function sendResponse(Response $response, string $expectedOutput): void
+    protected function sendResponse(Response $response, string $expectedOutput, ?string $expectedContentType = 'application/json'): void
     {
         $this->expectOutputString($expectedOutput);
 
-        $response->send(
-            $this->createMock(IRequest::class),
-            $this->createMock(IResponse::class),
-        );
+        $requestMock = $this->createMock(IRequest::class);
+        $responseMock = $this->createMock(IResponse::class);
+
+        if ($expectedContentType) {
+            $responseMock->expects($this->once())
+                ->method('setContentType')
+                ->with($expectedContentType, 'utf-8');
+        }
+
+        $response->send($requestMock, $responseMock);
     }
 
     /**

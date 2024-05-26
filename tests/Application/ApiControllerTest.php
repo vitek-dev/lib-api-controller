@@ -6,11 +6,11 @@ namespace VitekDev\Tests\Nette\Application;
 
 use Nette\Application\Request;
 use Nette\Application\Responses\JsonResponse;
-use Nette\Application\Responses\TextResponse;
 use Nette\Application\Responses\VoidResponse;
 use Nette\Http\IResponse;
 use PHPUnit\Framework\TestCase;
 use VitekDev\Nette\Application\ApiController;
+use VitekDev\Nette\Application\Response\PlainTextResponse;
 use VitekDev\Nette\Application\Response\StatusResponse;
 use VitekDev\Tests\Nette\Application\Test\ApiTestControllers;
 
@@ -168,9 +168,9 @@ class ApiControllerTest extends TestCase
             new Request('Api', 'GET', ['action' => 'stringResponse'])
         );
 
-        self::assertInstanceOf(TextResponse::class, $response);
+        self::assertInstanceOf(PlainTextResponse::class, $response);
 
-        $this->sendResponse($response, 'Just string response');
+        $this->sendResponse($response, 'Just string response', 'text/plain');
     }
 
     public function testIntTextResponse(): void
@@ -179,9 +179,9 @@ class ApiControllerTest extends TestCase
             new Request('Api', 'GET', ['action' => 'intResponse'])
         );
 
-        self::assertInstanceOf(TextResponse::class, $response);
+        self::assertInstanceOf(PlainTextResponse::class, $response);
 
-        $this->sendResponse($response, '42');
+        $this->sendResponse($response, '42', 'text/plain');
     }
 
     public function testArrayResponse(): void
@@ -223,8 +223,8 @@ class ApiControllerTest extends TestCase
             new Request('Api', 'POST', ['action' => 'index']),
         );
 
-        self::assertInstanceOf(TextResponse::class, $response);
-        self::assertSame('I am Bond, James Bond', $response->getSource());
+        self::assertInstanceOf(PlainTextResponse::class, $response);
+        self::assertSame('I am Bond, James Bond', $response->getPayload());
     }
 
     public function testMappingRequestBodyInvalid(): void
@@ -259,11 +259,11 @@ class ApiControllerTest extends TestCase
             new Request('Api', 'POST', ['action' => 'optional'])
         );
 
-        self::assertInstanceOf(TextResponse::class, $responseNoData);
-        self::assertSame('no data, but that is fine', $responseNoData->getSource());
+        self::assertInstanceOf(PlainTextResponse::class, $responseNoData);
+        self::assertSame('no data, but that is fine', $responseNoData->getPayload());
 
-        self::assertInstanceOf(TextResponse::class, $responseHasData);
-        self::assertSame('I am Bond, James Bond', $responseHasData->getSource());
+        self::assertInstanceOf(PlainTextResponse::class, $responseHasData);
+        self::assertSame('I am Bond, James Bond', $responseHasData->getPayload());
     }
 
     public function testRequestBodyMalformed(): void
@@ -291,9 +291,9 @@ class ApiControllerTest extends TestCase
             ]),
         );
 
-        self::assertInstanceOf(TextResponse::class, $response);
+        self::assertInstanceOf(PlainTextResponse::class, $response);
 
-        $this->sendResponse($response, 'I am Bond, Ing. James Bond');
+        $this->sendResponse($response, 'I am Bond, Ing. James Bond', 'text/plain');
     }
 
     public function testRouteParametersMissingRequired(): void
@@ -314,9 +314,9 @@ class ApiControllerTest extends TestCase
             new Request('Api', 'GET', ['action' => 'index', 'name' => 'James'])
         );
 
-        self::assertInstanceOf(TextResponse::class, $response);
+        self::assertInstanceOf(PlainTextResponse::class, $response);
 
-        $this->sendResponse($response, 'I am Doe, Mr. James Doe');
+        $this->sendResponse($response, 'I am Doe, Mr. James Doe', 'text/plain');
     }
 
     public function testRouteParametersCasting(): void
@@ -360,11 +360,11 @@ class ApiControllerTest extends TestCase
             ])
         );
 
-        self::assertInstanceOf(TextResponse::class, $responseFail);
-        self::assertSame('BAD', $responseFail->getSource());
+        self::assertInstanceOf(PlainTextResponse::class, $responseFail);
+        self::assertSame('BAD', $responseFail->getPayload());
 
-        self::assertInstanceOf(TextResponse::class, $requestSuccess);
-        self::assertSame('GOOD', $requestSuccess->getSource());
+        self::assertInstanceOf(PlainTextResponse::class, $requestSuccess);
+        self::assertSame('GOOD', $requestSuccess->getPayload());
     }
     //endregion
 }

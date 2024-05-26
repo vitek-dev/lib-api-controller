@@ -21,6 +21,7 @@ use ReflectionNamedType;
 use RuntimeException;
 use Throwable;
 use VitekDev\Nette\Application\Request\RequestBody;
+use VitekDev\Nette\Application\Response\PlainTextResponse;
 use VitekDev\Nette\Application\Response\StatusResponse;
 use VitekDev\Shared\Exceptions\Resources\ResourceNotFound;
 use VitekDev\Shared\Exceptions\Security\AuthenticationRequired;
@@ -179,7 +180,7 @@ abstract readonly class ApiController implements IPresenter
         }
 
         if (is_scalar($result)) {
-            return new TextResponse($result);
+            return new PlainTextResponse($result);
         }
 
         if (is_array($result) || is_object($result)) {
